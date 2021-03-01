@@ -1,0 +1,19 @@
+#Testing bufSize < itemCnt
+#   Pass: No errors, output as expected
+#   Fail: Errors encountered
+./producer 10 20 124
+
+#Testing bufSize == itemCnt
+#   Pass: No errors, output as expected
+#   Fail: Errors encountered
+./producer 20 20 167
+
+#Testing bufSize > itemCnt
+#   Pass: No errors, output as expected
+#   Fail: Errors encountered
+./producer 20 10 189
+
+#Testing robustness
+#   Pass: No errors, output as expected
+#   Fail: Errors encountered
+./producer 10 1000 145
