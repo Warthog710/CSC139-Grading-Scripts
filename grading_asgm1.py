@@ -1,6 +1,7 @@
 import os
 import subprocess
 import shutil
+import time
 
 def read_test_cases():
     print('Reading test cases...')
@@ -32,6 +33,9 @@ def sort_submissions():
 
         #Get the student name
         student_name = entry.split('_')[0]
+
+        if 'LATE' in entry:
+            student_name += ' (LATE)'
 
         #Make the directory if not alread create
         if not os.path.exists('./' + student_name):
@@ -104,12 +108,39 @@ def compile_submissions():
         #Go back a directory
         os.chdir('..')
 
+#? Function needs a lot more work before it ready, just using this script to organize and compile submissions.
 def run_test_cases(test_cases):
     print('Running test cases...')
 
+    #Read through all directories and run the test cases on the students files
+    for entry in os.listdir():
+        #Ignore .vscode/.git folder and only look at directories
+        if entry.startswith('.') or not os.path.isdir(entry):
+            continue
 
-test_cases = read_test_cases()
-print(test_cases)
+        #Enter the directory
+        os.chdir('./' + entry)
+
+        #Only run if the file exists
+        if os.path.exists('./producer'):
+            #Run all the test cases
+            count = 1
+            summary = ''
+
+            #Move test case 1 script in and run
+            shutil.move('../grade_case1.sh', './')
+            time.sleep(1)
+            testPipe = subprocess.Popen('./grade_case1.sh', shell=True)
+            shutil.move('./grade_case1.sh', '../grade_case1.sh')
+            #print(testPipe.communicate())             
+
+        #Go back a directory
+        os.chdir('..')    
+        time.sleep(1)      
+
+
+#test_cases = read_test_cases()
+#print(test_cases)
 sort_submissions()
 rename_submissions()
 compile_submissions()
