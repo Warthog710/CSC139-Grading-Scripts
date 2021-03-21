@@ -1,5 +1,0 @@
-#Ignore everything but .py and txt files
-*
-!*.py
-!*.txt
-!*.sh
