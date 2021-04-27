@@ -1,0 +1,11 @@
+PR_withPREMP
+0    1
+2    2
+3    1
+9    3
+10    4
+11    5
+20    4
+21    3
+22    6
+AVG Waiting Time: 5.17

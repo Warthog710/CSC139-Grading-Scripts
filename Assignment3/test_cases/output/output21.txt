@@ -1,0 +1,8 @@
+PR_noPREMP
+0    2
+10    5
+15    1
+16    3
+28    6
+32    4
+AVG Waiting Time: 16.83
