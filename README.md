@@ -12,3 +12,7 @@ Used ``grading_asgm3_sort_rename.py``, ``grading_asgm3_compile_validate.py``, an
  - If the rename function is called multiple times on the same directory unexpected results can occur.
  - If the students program is overly complicated (includes multiple files with headers) or is stored in a multi-level directory structure it may fail to properly compile. In this case the program should mark such students folders as *"manual"*. Either test these manually or change the structure into something suitable for the script.
  - If a students program expects input from a file not named *input.txt* (in the same directory, with exact naming) or fails to produce an *output.txt* (in the same directory, with exact naming) the script will fail to test properly, and produce unexpected results. Recommendation go through each students work and verify they are accepting input and producing output in this manner.
+
+#### Plagirism Detection
+Plagirism detection is difficult to write. In light of this, it may be nice to use something already made. Unfortunately I do not have the time to research, and use such a library but perhaps something like this would work? Maybe someone in the future can play around with this:
+<a href="https://github.com/manuel-freire/ac2">AC2 Project</a>
